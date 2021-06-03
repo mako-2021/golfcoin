@@ -3,7 +3,10 @@ const router = express.Router()
 
 
 router.get('/', (req, res) => {
-    res.render('home', 'Hello from home');
+    const viewData = {
+        text: 'Hello from home'
+    }
+    res.render('home', viewData);
 });
 
 module.exports = router
