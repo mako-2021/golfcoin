@@ -8,9 +8,16 @@
     "express-handlebars": "^5.3.2",
     "handlebars": "^4.7.7"
   },
-  "devDependencies": {},
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "data.json"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^27.0.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
