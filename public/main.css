@@ -6,6 +6,12 @@
     margin-top: 30px;    
 }
 
+.homebutton {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .title {
     font-size: 100px;
 }
