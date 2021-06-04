@@ -27,7 +27,10 @@ router.get('/stories/:id', (req, res) => {
             image: theStory.image,
             option1: theStory.option1,
             option2: theStory.option2,
-            option3: theStory.option3
+            option3: theStory.option3,
+            story1: theStory.id == 1,
+            story2: theStory.id == 2,
+            story3: theStory.id == 3
         }
         console.log(viewData);
         res.render('story', viewData)

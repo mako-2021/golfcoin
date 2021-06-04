@@ -1,6 +1,19 @@
-<div>
-    {{#if this.id }}
-    <img src="{{image}}" alt="{{name}}">
-    {{>storyOne}}
+<div class="container">
+    {{#if story1}}
+    <img class="box" src="{{image}}" alt="{{name}}">
+    <div class="stack-top">
+        {{>storyOne}}
+    </div>
+    {{else if story2}}
+    <img class="box" src="{{image}}" alt="{{name}}">
+    <div class="stack-top">
+        {{>storyTwo}}
+    </div>
+    {{else story3}}
+    <img class="box" src="{{image}}" alt="{{name}}">
+    <div class="stack-top">
+        {{>storyThree}}
+    </div>
     {{/if}}
+
 </div>

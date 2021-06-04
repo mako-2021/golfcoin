@@ -1,10 +1,19 @@
 <h1 class='story'>Chose a story...</h1>
 
+<div class='container'>
+    <div class='row'>
+        {{#each stories}}
 
-{{#each stories}}
-<div class="story-list">
-    <a class="storyLink" href="/stories/{{id}}">
-        <p>{{storyName}}</p>
-    </a>
-</div>
-{{/each}}
+        <div class='col-4'>
+            <div class='story-list'>
+                <a class="storyLink" href="/stories/{{id}}">
+                    <p class='storyz'>{{storyName}}</p>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class='row'>
+
+
+    </div>
