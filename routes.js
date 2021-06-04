@@ -34,7 +34,7 @@ router.get('/stories/:id', (req, res) => {
             option2: theStory.option2,
             option3: theStory.option3
         }
-        res.render('stories', viewData)
+        res.render('story', viewData)
     })
 })
 
