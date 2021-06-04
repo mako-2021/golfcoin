@@ -1,6 +1,6 @@
 .header {
     font-family: 'Bangers', cursive;
-    padding: 50px 0;
+    padding: 20px 0;
     background: orange;
     border-radius: 10px;
     margin-top: 30px;    
@@ -16,18 +16,48 @@
 }
 
 
-i {
+i, .fab .fa-bitcoin {
     font-size: 120px
 }
 
 .body {
-    background: palegoldenrod;
+    /* background: rgb(39, 39, 38); */
     text-align: center;
     
 }
 
+.fa-github {
+    font-size: 24px;
+    color: black;
+    transition: all 200ms ease;
+}
+
+.fa-github:hover {
+    color: rgb(59, 58, 58)
+}
+
+.button {
+    max-width: 300px;
+    border-radius: 20px
+}
+
+.golfcoin {
+    color: black;
+    text-decoration: none;
+    transition: all 200ms ease;
+}
+
+.golfcoin:hover {
+    color: rgb(59, 58, 58)
+}   
+
+.story {
+    color: rgb(12, 11, 11);
+    font-family: "Caveat";
+}
 
 .btn {
-    padding: 100px
+    box-shadow: 5px  5px 10px blanchedalmond;
+    background-color:transparent;
 }
-    
+

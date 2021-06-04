@@ -1,9 +1,10 @@
-<div class="home">
-    <h1>{{title}}</h1>
-
-    <buttton class='btn btn-primary btn-lg'>{{text}}</buttton>
-    <buttton class='btn btn-primary'>{{text}}</buttton>
-    <buttton class='btn btn-primary'>{{text}}</buttton>
+<h1 class='story'>Chose a story...</h1>
 
 
+{{#each stories}}
+<div class="story-list">
+    <a class="storyLink" href="/stories/{{id}}">
+        <p>{{storyName}}</p>
+    </a>
 </div>
+{{/each}}

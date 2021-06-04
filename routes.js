@@ -2,21 +2,15 @@ const express = require('express')
 const router = express.Router()
 const fs = require('fs')
 
-
 router.get('/', (req, res) => {
     res.redirect('/stories')
 })
 
 router.get('/stories', (req, res) => {
     fs.readFile('./data.json', 'utf8', (err, dataText) => {
-        if (err) return console.error(err)
+        if (err) return console.log(err)
         const data = JSON.parse(dataText)
-        const viewData = {
-            id: data.id,
-            genre: data.genre,
-            name: data.storyName
-        }
-        res.render('home', viewData);
+        res.render('home', data)
     })
 })
 
@@ -35,6 +29,7 @@ router.get('/stories/:id', (req, res) => {
             option2: theStory.option2,
             option3: theStory.option3
         }
+        console.log(viewData);
         res.render('story', viewData)
     })
 })
