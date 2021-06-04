@@ -1,11 +1,31 @@
 {
-    "story": [
+    "stories": [
         {
             "id": 1,
-            "key1": "",
-            "key2": "",
-            "image": "/",
-            "key3": ""
+            "genre": "horror",
+            "storyName": "bed time",
+            "option1": "?",
+            "option2": "?",
+            "option3": "?",
+            "image": "/images/horror.jpeg"
+        }
+        {
+            "id": 2,
+            "genre": "fantasy",
+            "storyName": "adventure time!",
+            "option1": "?",
+            "option2": "?",
+            "option3": "?",
+            "image": "/images/fantasy.jpeg" 
+        }
+        {
+            "id": 3,
+            "genre": "Start up",
+            "storyName": "the generous company",
+            "option1": "?",
+            "option2": "?",
+            "option3": "?",
+            "image": "/images/business.jpeg" 
         }
     ]
 }
