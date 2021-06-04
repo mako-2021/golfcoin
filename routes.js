@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const fs = require('fs')
 
 
 router.get('/', (req, res) => {
@@ -8,7 +9,7 @@ router.get('/', (req, res) => {
 
 router.get('/stories', (req, res) => {
     fs.readFile('./data.json', 'utf8', (err, dataText) => {
-        if (err) return console.error(err) 
+        if (err) return console.error(err)
         const data = JSON.parse(dataText)
         const viewData = {
             id: data.id,
@@ -27,7 +28,7 @@ router.get('/stories/:id', (req, res) => {
         const theStory = data.stories.find(findtheStory => findtheStory.id == storyId)
         const viewData = {
             id: theStory.id,
-            genre: theStory.genre, 
+            genre: theStory.genre,
             name: theStory.storyName,
             image: theStory.image,
             option1: theStory.option1,
@@ -40,22 +41,22 @@ router.get('/stories/:id', (req, res) => {
 
 router.post('/stories/:id', (req, res) => {
     fs.readFile('./data.json', 'utf8', (err, dataText) => {
-      if (err) return console.log(err)
-      const data = JSON.parse(dataText)
-      console.log(data)
-      const storyId = req.params.id
-      const theStory = data.stories.find(findtheStory => findtheStory.id == storyId)
-      const indexOfStory = data.stories.indexOf(theStory)
-      data.stories[indexOfStory] = { ...theStory, option1: req.body.option1, option2: req.body.option2, option3: req.body.option3 }
-  
-      fs.writeFile('./data.json', JSON.stringify(data), (err) => {
-        if (err) {
-          return console.error(err)
-        } else return console.log('the story has been made!!')
-      })
-      res.redirect(`/stories/${storyId}`)
+        if (err) return console.log(err)
+        const data = JSON.parse(dataText)
+        console.log(data)
+        const storyId = req.params.id
+        const theStory = data.stories.find(findtheStory => findtheStory.id == storyId)
+        const indexOfStory = data.stories.indexOf(theStory)
+        data.stories[indexOfStory] = { ...theStory, option1: req.body.option1, option2: req.body.option2, option3: req.body.option3 }
+
+        fs.writeFile('./data.json', JSON.stringify(data), (err) => {
+            if (err) {
+                return console.error(err)
+            } else return console.log('the story has been made!!')
+        })
+        res.redirect(`/stories/${storyId}`)
     })
-  })
+})
 
 
 module.exports = router
